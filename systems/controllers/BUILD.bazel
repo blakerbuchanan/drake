@@ -127,6 +127,19 @@ drake_cc_library(
 )
 
 drake_cc_library(
+    name = "iterative_linear_quadratic_regulator",
+    srcs = ["iterative_linear_quadratic_regulator.cc"],
+    hdrs = ["iterative_linear_quadratic_regulator.h"],
+    deps = [
+        "//common:is_approx_equal_abstol",
+        "//math:continuous_algebraic_riccati_equation",
+        "//math:discrete_algebraic_riccati_equation",
+        "//systems/framework",
+        "//systems/primitives:linear_system",
+    ],
+)
+
+drake_cc_library(
     name = "pid_controller",
     srcs = ["pid_controller.cc"],
     hdrs = ["pid_controller.h"],
